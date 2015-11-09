@@ -1,4 +1,5 @@
-data <- read.csv('household_power_consumption.txt', sep=';')
+data <- read.csv('household_power_consumption.txt', sep=';',
+                 colClasses='character')
 data <- data[data$Date %in% c('1/2/2007', '2/2/2007'),]
 data <- within(data, {
     Sub_metering_1 <- as.numeric(Sub_metering_1)
